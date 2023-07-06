@@ -29,6 +29,7 @@ import com.example.coindash.ui.theme.White
 
 private val coin = Coin("Ethereum", "ETH",9800.00,23.8 )
 
+
 @Composable
 fun CoinListItem(coin: Coin){
         Row(
