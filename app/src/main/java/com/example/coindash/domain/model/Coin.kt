@@ -1,4 +1,4 @@
-package com.example.coindash.model
+package com.example.coindash.domain.model
 
 data class Coin(
     val name:String,

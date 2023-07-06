@@ -1,6 +1,6 @@
-package com.example.coindash.utils
+package com.example.coindash.data
 
-import com.example.coindash.model.Coin
+import com.example.coindash.domain.model.Coin
 
 object DummyData {
     private val coin1 = Coin("Ethereum","ETH", 10900.00, 12.08 )

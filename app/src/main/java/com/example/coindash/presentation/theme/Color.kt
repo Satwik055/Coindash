@@ -1,4 +1,4 @@
-package com.example.coindash.ui.theme
+package com.example.coindash.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

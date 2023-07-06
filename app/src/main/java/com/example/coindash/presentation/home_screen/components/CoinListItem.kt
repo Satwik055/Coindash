@@ -1,4 +1,4 @@
-package com.example.coindash.components
+package com.example.coindash.presentation.home_screen.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,12 +20,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.coindash.R
-import com.example.coindash.model.Coin
-import com.example.coindash.ui.theme.Gondola
-import com.example.coindash.ui.theme.Gray
-import com.example.coindash.ui.theme.Green
-import com.example.coindash.ui.theme.Manrope
-import com.example.coindash.ui.theme.White
+import com.example.coindash.domain.model.Coin
+import com.example.coindash.presentation.theme.Gondola
+import com.example.coindash.presentation.theme.Gray
+import com.example.coindash.presentation.theme.Green
+import com.example.coindash.presentation.theme.Manrope
+import com.example.coindash.presentation.theme.White
 
 private val coin = Coin("Ethereum", "ETH",9800.00,23.8 )
 

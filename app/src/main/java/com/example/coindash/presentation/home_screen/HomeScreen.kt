@@ -1,6 +1,6 @@
-package com.example.coindash.screens
+package com.example.coindash.presentation.home_screen
 
-import com.example.coindash.components.CoinListItem
+import com.example.coindash.presentation.home_screen.components.CoinListItem
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,11 +19,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.coindash.ui.theme.Green
-import com.example.coindash.ui.theme.Manrope
-import com.example.coindash.ui.theme.White
-import com.example.coindash.ui.theme.Onyx
-import com.example.coindash.utils.DummyData
+import com.example.coindash.presentation.theme.Green
+import com.example.coindash.presentation.theme.Manrope
+import com.example.coindash.presentation.theme.White
+import com.example.coindash.presentation.theme.Onyx
+import com.example.coindash.data.DummyData
 
 @Composable
 fun HomeScreen(){
