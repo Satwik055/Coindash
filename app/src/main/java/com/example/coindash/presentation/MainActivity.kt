@@ -1,6 +1,6 @@
 package com.example.coindash.presentation
 
-import com.example.coindash.presentation.home_screen.HomeScreen
+import com.example.coindash.presentation.coin_list_screen.HomeScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent

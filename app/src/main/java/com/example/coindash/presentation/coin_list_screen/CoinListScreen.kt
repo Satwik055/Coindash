@@ -1,6 +1,6 @@
-package com.example.coindash.presentation.home_screen
+package com.example.coindash.presentation.coin_list_screen
 
-import com.example.coindash.presentation.home_screen.components.CoinListItem
+import com.example.coindash.presentation.coin_list_screen.components.CoinListItem
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -24,9 +24,11 @@ import com.example.coindash.presentation.theme.Manrope
 import com.example.coindash.presentation.theme.White
 import com.example.coindash.presentation.theme.Onyx
 import com.example.coindash.data.DummyData
+import com.example.coindash.domain.use_case.get_coins.GetCoinsUseCase
 
 @Composable
 fun HomeScreen(){
+
     Column(
         modifier = Modifier
             .padding(top = 16.dp, start = 16.dp, end = 16.dp)

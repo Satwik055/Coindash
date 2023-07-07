@@ -1,8 +1,9 @@
 package com.example.coindash.domain.model
 
 data class Coin(
-    val name:String,
-    val symbol:String,
-    val price: Double,
-    val changeIn24Hrs: Double
+    val id: String,
+    val name: String,
+    val rank: Int,
+    val symbol: String,
+    val type: String
 )
