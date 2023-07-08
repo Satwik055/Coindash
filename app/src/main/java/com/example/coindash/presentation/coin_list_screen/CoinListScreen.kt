@@ -1,73 +1,33 @@
 package com.example.coindash.presentation.coin_list_screen
 
 import com.example.coindash.presentation.coin_list_screen.components.CoinListItem
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.example.coindash.presentation.theme.Green
-import com.example.coindash.presentation.theme.Manrope
-import com.example.coindash.presentation.theme.White
-import com.example.coindash.presentation.theme.Onyx
-import com.example.coindash.data.DummyData
-import com.example.coindash.domain.use_case.get_coins.GetCoinsUseCase
+import com.example.coindash.utils.DummyData
 
 @Composable
 fun HomeScreen(){
-
-    Column(
-        modifier = Modifier
-            .padding(top = 16.dp, start = 16.dp, end = 16.dp)
-            .background(color = Onyx))
-    {
-        Text(
-            "In past 24 hours",
-            color = White,
-            fontSize = 16.sp,
-            fontFamily = Manrope,
-            fontWeight = FontWeight.Normal
+    Column {
+        Spacer(
+            modifier = Modifier.height(10.dp)
         )
-        Spacer(modifier = Modifier.height(20.dp))
-        Row{
-            Text(
-                "Market is up",
-                color = White,
-                fontSize = 36.sp,
-                fontFamily = Manrope,
-                fontWeight = FontWeight.Normal,
-
-                )
-            Text(
-                "+2%",
-                color = Green,
-                fontSize = 16.sp,
-                fontFamily = Manrope,
-                fontWeight = FontWeight.Normal,
-                modifier = Modifier.padding(top = 25.dp, start = 10.dp)
-            )
-            Spacer(modifier = Modifier.width(10.dp))
-
-        }
-
-        Spacer(modifier = Modifier.height(36.dp))
         LazyColumn(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(start = 16.dp, end = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             items(DummyData.dummyCoinList()){ coin ->
                 CoinListItem(coin = coin)
@@ -77,3 +37,8 @@ fun HomeScreen(){
 }
 
 
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    HomeScreen()
+}
