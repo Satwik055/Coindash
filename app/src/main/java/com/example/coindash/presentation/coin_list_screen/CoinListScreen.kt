@@ -4,6 +4,7 @@ package com.example.coindash.presentation.coin_list_screen
 import android.util.Log
 import com.example.coindash.presentation.coin_list_screen.components.CoinListItem
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,48 +22,59 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.coindash.presentation.detail_screen.CoinDetailViewModel
 import com.example.coindash.presentation.navigation.Screen
+import com.example.coindash.presentation.theme.Green
 
 @Composable
 fun CoinListScreen(
     navController:NavController,
-    viewModel:CoinListViewModel = hiltViewModel()
+    viewModel:CoinListViewModel = hiltViewModel(),
 ){
     val state = viewModel.state.value
 
-    Column {
-        Spacer(
-            modifier = Modifier.height(10.dp)
-        )
-
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(start = 16.dp, end = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            items(state.coins){coin ->
-                CoinListItem(
-                    coin = coin,
-                    onItemClick = {
-                    navController.navigate(
-                        Screen.CoinDetailScreen.route + "/${coin.id}"
-                    )
-                })
-            }
-        }
+    Box (
+        modifier = Modifier.fillMaxSize()
+    ){
 
         if(state.error.isNotBlank()){
             Text(
                 text = state.error,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
+                modifier = Modifier.align(Alignment.Center)
             )
         }
 
         if(state.isLoading){
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center),
+                color = Green
+            )
         }
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        if(state.coins.isNotEmpty()){
+            LazyColumn(
+                modifier = Modifier
+                    .matchParentSize()
+                    .padding(start = 16.dp, end = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                items(state.coins){coin ->
+                    CoinListItem(
+                        coin = coin,
+                        onItemClick = {
+                            navController.navigate(
+                                Screen.CoinDetailScreen.route + "/${coin.id}"
+                            )
+                        })
+                }
+            }
+        }
+
+
+
 
     }
 }
