@@ -14,11 +14,11 @@ import javax.inject.Inject
 
 class GetSingleCoinUseCase @Inject constructor(private val coinRepository: CoinRepository) {
 
-    operator fun invoke(coinId:String): Flow<Resource<List<CoinDetail>>> = flow {
+    operator fun invoke(coinId:String): Flow<Resource<CoinDetail>> = flow {
         try {
             emit(Resource.Loading())
             val coin = coinRepository.getCoinById(coinId).toCoinDetail()
-            Resource.Success(coin)
+            emit(Resource.Success(coin))
         } catch (e: HttpException){
             emit(Resource.Error(e.localizedMessage?:"An unexpected error occurred"))
         } catch (e: IOException){

@@ -4,6 +4,7 @@ import com.example.coindash.common.Constants
 import com.example.coindash.data.remote.CoinPaprikaApi
 import com.example.coindash.data.repository.CoinRepositoryImpl
 import com.example.coindash.domain.repository.CoinRepository
+import com.example.coindash.domain.use_case.get_coins.GetCoinsUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
